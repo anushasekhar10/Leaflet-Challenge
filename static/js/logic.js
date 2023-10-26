@@ -11,7 +11,7 @@ d3.json(Url).then(function (data) {
 
 // Function to determine marker size
 function markerSize(magnitude) {
-  return magnitude * 2000;
+  return magnitude * 5000;
 };
 
 // Function to determine marker color by depth
@@ -63,7 +63,7 @@ function createMap(earthquakes) {
   var grayscale = L.tileLayer('https://api.mapbox.com/styles/v1/{style}/tiles/{z}/{x}/{y}?access_token={access_token}', {
     attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
     tileSize: 512,
-    maxZoom: 18,
+    maxZoom: 150,
     zoomOffset: -1,
     style:    'mapbox/light-v11',
     access_token: APIKEY 
@@ -72,9 +72,9 @@ function createMap(earthquakes) {
   // Create our map, giving it the grayscale map and earthquakes layers to display on load.
   var myMap = L.map("map", {
     center: [
-      37.09, -95.71
+      38.5816, -121.4944
     ],
-    zoom: 10,
+    zoom: 6,
     layers: [grayscale, earthquakes]
   });
 
